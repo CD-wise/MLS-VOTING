@@ -492,10 +492,9 @@ export default function AdminDashboard() {
 
         {/* Main Dashboard */}
         <Tabs defaultValue="overview" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-4">
+          <TabsList className="grid w-full grid-cols-3">
             <TabsTrigger value="overview">Overview</TabsTrigger>
             <TabsTrigger value="results">Results</TabsTrigger>
-            <TabsTrigger value="voting-summary">Voting Summary</TabsTrigger>
             <TabsTrigger value="exports">Exports</TabsTrigger>
           </TabsList>
 
@@ -564,134 +563,6 @@ export default function AdminDashboard() {
             </div>
           </TabsContent>
 
-          <TabsContent value="voting-summary" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Voting Summary</CardTitle>
-                <CardDescription>
-                  Complete voting summary showing each student's votes across all categories
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                {transformedStudentData.length === 0 ? (
-                  <div className="text-center py-8">
-                    <p className="text-gray-500">No students have voted yet.</p>
-                  </div>
-                ) : (
-                  <div className="overflow-x-auto">
-                    <table className="w-full text-sm">
-                      <thead>
-                        <tr className="border-b bg-gray-50">
-                          <th className="text-left p-2 font-semibold">Student ID</th>
-                          <th className="text-left p-2 font-semibold">Name</th>
-                          <th className="text-left p-2 font-semibold">Programme</th>
-                          <th className="text-left p-2 font-semibold">Level</th>
-                          <th className="text-left p-2 font-semibold">Presidential</th>
-                          <th className="text-left p-2 font-semibold">Financial Secretary</th>
-                          <th className="text-left p-2 font-semibold">General Secretary</th>
-                          <th className="text-left p-2 font-semibold">General Organizers</th>
-                          <th className="text-left p-2 font-semibold">WOCOM</th>
-                          <th className="text-left p-2 font-semibold">PRO</th>
-                          <th className="text-left p-2 font-semibold">Health Officer</th>
-                          <th className="text-left p-2 font-semibold">Welfare Officer</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {transformedStudentData.slice(0, 20).map((student, index) => (
-                          <tr key={student.student_id || index} className="border-b hover:bg-gray-50">
-                            <td className="p-2 font-mono font-semibold">{student.student_id}</td>
-                            <td className="p-2 font-medium">{student.student_name}</td>
-                            <td className="p-2 text-xs">{student.programme}</td>
-                            <td className="p-2 text-center">{student.level}</td>
-                            <td className="p-2 text-xs">
-                              <span className={`px-2 py-1 rounded text-xs ${
-                                (student.votes?.['Presidential'] || student.presidential) !== "No Vote" 
-                                  ? "bg-green-100 text-green-800" 
-                                  : "bg-gray-100 text-gray-600"
-                              }`}>
-                                {student.votes?.['Presidential'] || student.presidential || "No Vote"}
-                              </span>
-                            </td>
-                            <td className="p-2 text-xs">
-                              <span className={`px-2 py-1 rounded text-xs ${
-                                (student.votes?.['Financial Secretary'] || student.financial_secretary) !== "No Vote" 
-                                  ? "bg-green-100 text-green-800" 
-                                  : "bg-gray-100 text-gray-600"
-                              }`}>
-                                {student.votes?.['Financial Secretary'] || student.financial_secretary || "No Vote"}
-                              </span>
-                            </td>
-                            <td className="p-2 text-xs">
-                              <span className={`px-2 py-1 rounded text-xs ${
-                                (student.votes?.['General Secretary'] || student.general_secretary) !== "No Vote" 
-                                  ? "bg-green-100 text-green-800" 
-                                  : "bg-gray-100 text-gray-600"
-                              }`}>
-                                {student.votes?.['General Secretary'] || student.general_secretary || "No Vote"}
-                              </span>
-                            </td>
-                            <td className="p-2 text-xs">
-                              <span className={`px-2 py-1 rounded text-xs ${
-                                (student.votes?.['General Organizers'] || student.general_organizers) !== "No Vote" 
-                                  ? "bg-green-100 text-green-800" 
-                                  : "bg-gray-100 text-gray-600"
-                              }`}>
-                                {student.votes?.['General Organizers'] || student.general_organizers || "No Vote"}
-                              </span>
-                            </td>
-                            <td className="p-2 text-xs">
-                              <span className={`px-2 py-1 rounded text-xs ${
-                                (student.votes?.['WOCOM'] || student.wocom) !== "No Vote" 
-                                  ? "bg-green-100 text-green-800" 
-                                  : "bg-gray-100 text-gray-600"
-                              }`}>
-                                {student.votes?.['WOCOM'] || student.wocom || "No Vote"}
-                              </span>
-                            </td>
-                            <td className="p-2 text-xs">
-                              <span className={`px-2 py-1 rounded text-xs ${
-                                (student.votes?.['PRO'] || student.pro) !== "No Vote" 
-                                  ? "bg-green-100 text-green-800" 
-                                  : "bg-gray-100 text-gray-600"
-                              }`}>
-                                {student.votes?.['PRO'] || student.pro || "No Vote"}
-                              </span>
-                            </td>
-                            <td className="p-2 text-xs">
-                              <span className={`px-2 py-1 rounded text-xs ${
-                                (student.votes?.['Health Officer'] || student.health_officer) !== "No Vote" 
-                                  ? "bg-green-100 text-green-800" 
-                                  : "bg-gray-100 text-gray-600"
-                              }`}>
-                                {student.votes?.['Health Officer'] || student.health_officer || "No Vote"}
-                              </span>
-                            </td>
-                            <td className="p-2 text-xs">
-                              <span className={`px-2 py-1 rounded text-xs ${
-                                (student.votes?.['Welfare Officer'] || student.welfare_officer) !== "No Vote" 
-                                  ? "bg-green-100 text-green-800" 
-                                  : "bg-gray-100 text-gray-600"
-                              }`}>
-                                {student.votes?.['Welfare Officer'] || student.welfare_officer || "No Vote"}
-                              </span>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                    {transformedStudentData.length > 20 && (
-                      <div className="mt-4 p-4 bg-red-50 rounded-lg">
-                        <p className="text-sm text-red-800 text-center">
-                          📊 Showing first 20 entries out of {transformedStudentData.length} students who have voted. 
-                          Use the CSV export below for complete data.
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          </TabsContent>
 
           <TabsContent value="exports" className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -724,37 +595,6 @@ export default function AdminDashboard() {
                 </CardContent>
               </Card>
 
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Download className="w-5 h-5 text-red-600" />
-                    <span>Voting Summary CSV</span>
-                  </CardTitle>
-                  <CardDescription>Export complete voting summary with student votes across all categories</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="bg-gray-50 p-4 rounded-lg">
-                      <h4 className="font-medium mb-2">CSV Layout:</h4>
-                      <ul className="text-sm text-gray-600 space-y-1">
-                        <li>• Student information (ID, name, programme, level)</li>
-                        <li>• Each voting category as a column</li>
-                        <li>• Candidate names for each student's votes</li>
-                        <li>• Complete voting summary in spreadsheet format</li>
-                        <li>• Easy to analyze in Excel/Google Sheets</li>
-                      </ul>
-                    </div>
-                    <Button 
-                      onClick={generateVotingSummaryCSV} 
-                      className="w-full bg-red-600 hover:bg-red-700"
-                      disabled={transformedStudentData.length === 0}
-                    >
-                      <Download className="w-4 h-4 mr-2" />
-                      Export Voting Summary CSV ({transformedStudentData.length} students)
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
 
             <Card>
