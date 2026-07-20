@@ -435,21 +435,6 @@ export default function AdminDashboard() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Voting Status Toggle */}
-        <div className="flex justify-end mb-4">
-          <Button
-            onClick={handleToggleVoting}
-            disabled={statusLoading || votingOpen === null}
-            className={votingOpen ? "bg-red-600 hover:bg-red-700" : "bg-blue-600 hover:bg-blue-700"}
-          >
-            {statusLoading
-              ? "Updating..."
-              : votingOpen
-              ? "Close Voting"
-              : "Open Voting"}
-          </Button>
-        </div>
-
         {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
           <Card>
