@@ -273,17 +273,10 @@ export default function WelcomePage() {
                   </div>
                   <Button
                     type="submit"
-                    disabled={loading || !studentId.trim()}
-                    className="w-full bg-red-600 hover:bg-red-700 text-white"
+                    disabled
+                    className="w-full bg-red-400 text-white cursor-not-allowed"
                   >
-                    {loading ? (
-                      <>
-                        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                        Verifying...
-                      </>
-                    ) : (
-                      "Continue"
-                    )}
+                    "Continue"
                   </Button>
                 </form>
               )}
