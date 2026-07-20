@@ -459,17 +459,6 @@ export default function WelcomePage() {
             </div>
             <div className="text-xs text-gray-400 space-y-1">
               <p>© 2026 All rights reserved</p>
-              <p>
-                Designed by{" "}
-                <a 
-                  href="https://neubridgeai.vercel.app" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-red-600 hover:text-red-800 underline"
-                >
-                  NeubridgeAI
-                </a>
-              </p>
             </div>
           </div>
         </div>
