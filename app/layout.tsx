@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "MLS Voting System",
-  description: "Medical Laboratory Science Students Association Elections - Accra Technical University",
-    generator: 'v0.dev'
+  description: "Medical Laboratory Science Students Association (MLS) Elections - Accra Technical University",
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -18,8 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <div className="min-h-screen bg-white">{children}</div>
+      <body className={`${inter.className} min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-slate-100`}>
+        <div className="min-h-screen">
+          {children}
+        </div>
       </body>
     </html>
   )
