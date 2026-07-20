@@ -190,7 +190,7 @@ export default function WelcomePage() {
   const getStepTitle = () => {
     switch (currentStep) {
       case "id-verification":
-        return "MLT Voting System"
+        return "MLS-VLS Voting System"
       case "phone-verification":
         return "Phone Verification"
       case "sms-otp":
@@ -198,14 +198,14 @@ export default function WelcomePage() {
       case "success":
         return "Verification Complete"
       default:
-        return "MLT Voting System"
+        return "MLS-VLS Voting System"
     }
   }
 
   const getStepDescription = () => {
     switch (currentStep) {
       case "id-verification":
-        return "Medical Laboratory Science Students Association (MLT) Elections"
+        return "Medical Laboratory Science & Veterinary Laboratory Science Students Election - Accra Technical University"
       case "phone-verification":
         return "Enter your complete phone number to receive SMS verification"
       case "sms-otp":
@@ -213,7 +213,7 @@ export default function WelcomePage() {
       case "success":
         return "You have been successfully verified. Redirecting..."
       default:
-        return "Medical Laboratory Science Students Association (MLT) Elections"
+        return "Medical Laboratory Science & Veterinary Laboratory Science Students Election - Accra Technical University"
     }
   }
 
@@ -240,11 +240,6 @@ export default function WelcomePage() {
                 <CardDescription className="text-gray-600 mt-2">
                   {getStepDescription()}
                 </CardDescription>
-                {currentStep === "id-verification" && (
-                  <CardDescription className="text-sm text-gray-500 mt-1">
-                    Accra Technical University - Medical Laboratory Science Department
-                  </CardDescription>
-                )}
               </div>
             </CardHeader>
             

@@ -21,7 +21,7 @@ export async function sendSMSOTP(phoneNumber: string, otp: string): Promise<{ su
     
     // Check if we have the required environment variables
     const apiKey = process.env.MNOTIFY_API_KEY
-    const senderId = process.env.MNOTIFY_SENDER_ID || 'MLT'
+    const senderId = process.env.MNOTIFY_SENDER_ID || 'MLS'
 
     if (!apiKey) {
       console.log('MNOTIFY_API_KEY not found, simulating SMS send...')
@@ -31,7 +31,7 @@ export async function sendSMSOTP(phoneNumber: string, otp: string): Promise<{ su
     }
 
     // Prepare the SMS message
-    const message = `Your MLT voting verification code is: ${otp}. This code expires in 10 minutes. Do not share this code with anyone.`
+    const message = `Your MLS voting verification code is: ${otp}. This code expires in 10 minutes. Do not share this code with anyone.`
 
     // Clean phone number (remove any spaces, dashes, etc.)
     const cleanPhone = phoneNumber.replace(/[\s\-()]/g, '')
@@ -78,7 +78,7 @@ export async function sendSMSOTP(phoneNumber: string, otp: string): Promise<{ su
 export async function sendSMS(phoneNumber: string, message: string): Promise<{ success: boolean; message?: string }> {
   try {
     const apiKey = process.env.MNOTIFY_API_KEY
-    const senderId = process.env.MNOTIFY_SENDER_ID || 'MLT'
+    const senderId = process.env.MNOTIFY_SENDER_ID || 'MLS'
 
     if (!apiKey) {
       console.log('MNOTIFY_API_KEY not found, simulating SMS send...')

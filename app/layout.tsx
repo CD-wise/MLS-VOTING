@@ -6,7 +6,7 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "MLS Voting System",
+  title: "MLS-VLS Voting System",
   description: "Medical Laboratory Science Students Association (MLS) Elections - Accra Technical University",
   generator: 'v0.dev'
 }

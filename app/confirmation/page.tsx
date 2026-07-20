@@ -95,7 +95,7 @@ export default function ConfirmationPage() {
               <div className="bg-red-50 p-4 rounded-lg">
                 <p className="text-sm text-red-800">
                   <strong>Important:</strong> Your votes are confidential and cannot be changed. Thank you for
-                  participating in the MLT elections.
+                  participating in the MLS elections.
                 </p>
               </div>
 
@@ -115,7 +115,7 @@ export default function ConfirmationPage() {
                   className="object-contain opacity-60"
                 />
               </div>
-              <p className="text-xs text-gray-500">MLT Voting System © 2026</p>
+              <p className="text-xs text-gray-500">MLS-VLS Voting System © 2026</p>
               <p className="text-xs text-gray-400">Accra Technical University - Medical Laboratory Science Department</p>
             </div>
           </CardContent>

@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
           </div>
           <div>
             <CardTitle className="text-2xl font-bold text-gray-900">Admin Access</CardTitle>
-            <CardDescription className="text-gray-600 mt-2">MLT Voting System Administration</CardDescription>
+            <CardDescription className="text-gray-600 mt-2">MLS-VLS Voting System Administration</CardDescription>
             <CardDescription className="text-sm text-gray-500 mt-1">Accra Technical University - Medical Laboratory Science Department</CardDescription>
           </div>
         </CardHeader>
